@@ -2,8 +2,10 @@ package com.potatorg;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +19,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        scene = new Scene(loadFXML("primary"), bounds.getWidth(), bounds.getHeight());
+        stage.setTitle("Document1 - Potato Docs");
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
