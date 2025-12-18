@@ -1,7 +1,9 @@
 package com.potatorg.components;
 
-import javafx.web.HTMLEditor;
+import javafx.scene.web.HTMLEditor;
 
-public class MyHTMLEditor {
-    
+public class MyHTMLEditor extends HTMLEditor {
+    public MyHTMLEditor() {
+        
+    }
 }
